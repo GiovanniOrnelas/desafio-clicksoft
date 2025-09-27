@@ -1,0 +1,793 @@
+{
+	"info": {
+		"_postman_id": "8b4feed0-1ee6-4526-877c-44606dcf4e26",
+		"name": "Clicksoft",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18491021"
+	},
+	"item": [
+		{
+			"name": "login",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"aluno+12@clicksoft.com\",\r\n    \"password\": \"@Mudar123**\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "student",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "1. Alterar o globalExceptionHandler para conter um padrão de retorno da API e cadastrar os erros lá\n2. Criar os exceptions ao inves de fazer \"throw new Error\"\n3. Verificar os retornos para manter tudo em inglês\n4. Ver uma forma de tipar a request\n5. Configurar o app para que ele sempre retorne em camelCase e que respeite o camelCase na request também\n6. Colocar claim nos tokens para poder saber o id do usuário"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer oat_Mg.c2JybDNncXNLemY0N21xRkpTeU9sQzdBSTFtNy13NXNzeF92NVFscTI2ODMwNzA3ODY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Aluno 10\",\n    \"email\": \"aluno+12@clicksoft.com\",\n    \"password\": \"@Mudar123**\",\n    \"registration\": \"12345\",\n    \"birthdate\": \"2003-11-06 12:00:00\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/students",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"students"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "1. Alterar o globalExceptionHandler para conter um padrão de retorno da API e cadastrar os erros lá\n2. Criar os exceptions ao inves de fazer \"throw new Error\"\n3. Verificar os retornos para manter tudo em inglês\n4. Ver uma forma de tipar a request\n5. Configurar o app para que ele sempre retorne em camelCase e que respeite o camelCase na request também\n6. Colocar claim nos tokens para poder saber o id do usuário"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer oat_Mg.c2JybDNncXNLemY0N21xRkpTeU9sQzdBSTFtNy13NXNzeF92NVFscTI2ODMwNzA3ODY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Aluno 2\",\n    \"email\": \"aluno+1@clicksoft.com\",\n    \"birthdate\": \"2003-11-06 12:00:00\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/students/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"students",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "1. Alterar o globalExceptionHandler para conter um padrão de retorno da API e cadastrar os erros lá\n2. Criar os exceptions ao inves de fazer \"throw new Error\"\n3. Verificar os retornos para manter tudo em inglês\n4. Ver uma forma de tipar a request\n5. Configurar o app para que ele sempre retorne em camelCase e que respeite o camelCase na request também\n6. Colocar claim nos tokens para poder saber o id do usuário"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer oat_Mg.c2JybDNncXNLemY0N21xRkpTeU9sQzdBSTFtNy13NXNzeF92NVFscTI2ODMwNzA3ODY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Aluno 2\",\n    \"email\": \"aluno+1@clicksoft.com\",\n    \"birthdate\": \"2003-11-06 12:00:00\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/students/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"students",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disableCookies": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer oat_Nw.N3BDNEFUWjNISlVieTAxbVRoTTNIdlVWRDBfRWVSUDNTU05JSDJ2ajI2MTEzODM4NTA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Aluno 1\",\n    \"email\": \"aluno+1@clicksoft.com\",\n    \"password\": \"@Mudar123**\",\n    \"registration\": \"123\",\n    \"birthdate\": \"2003-11-06 12:00:00\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/students/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"students",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "teacher",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "1. Alterar o globalExceptionHandler para conter um padrão de retorno da API e cadastrar os erros lá\n2. Criar os exceptions ao inves de fazer \"throw new Error\"\n3. Verificar os retornos para manter tudo em inglês\n4. Ver uma forma de tipar a request\n5. Configurar o app para que ele sempre retorne em camelCase e que respeite o camelCase na request também\n6. Colocar claim nos tokens para poder saber o id do usuário"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer oat_Mg.c2JybDNncXNLemY0N21xRkpTeU9sQzdBSTFtNy13NXNzeF92NVFscTI2ODMwNzA3ODY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Professor 2\",\n    \"email\": \"professor+3@clicksoft.com\",\n    \"password\": \"@Mudar123**\",\n    \"registration\": \"12345\",\n    \"birthdate\": \"2003-11-06 12:00:00\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/teachers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"teachers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "1. Alterar o globalExceptionHandler para conter um padrão de retorno da API e cadastrar os erros lá\n2. Criar os exceptions ao inves de fazer \"throw new Error\"\n3. Verificar os retornos para manter tudo em inglês\n4. Ver uma forma de tipar a request\n5. Configurar o app para que ele sempre retorne em camelCase e que respeite o camelCase na request também\n6. Colocar claim nos tokens para poder saber o id do usuário"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer oat_Mg.c2JybDNncXNLemY0N21xRkpTeU9sQzdBSTFtNy13NXNzeF92NVFscTI2ODMwNzA3ODY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Professor 1\",\n    \"email\": \"professor+2@clicksoft.com\",\n    \"birthdate\": \"2004-11-06 12:00:00\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/teachers/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"teachers",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer oat_Mg.c2JybDNncXNLemY0N21xRkpTeU9sQzdBSTFtNy13NXNzeF92NVFscTI2ODMwNzA3ODY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/teachers/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"teachers",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disableCookies": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer oat_Mg.c2JybDNncXNLemY0N21xRkpTeU9sQzdBSTFtNy13NXNzeF92NVFscTI2ODMwNzA3ODY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Aluno 1\",\n    \"email\": \"aluno+1@clicksoft.com\",\n    \"password\": \"@Mudar123**\",\n    \"registration\": \"123\",\n    \"birthdate\": \"2003-11-06 12:00:00\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/teachers/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"teachers",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "classroom",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "1. Alterar o globalExceptionHandler para conter um padrão de retorno da API e cadastrar os erros lá\n2. Criar os exceptions ao inves de fazer \"throw new Error\"\n3. Verificar os retornos para manter tudo em inglês\n4. Ver uma forma de tipar a request\n5. Configurar o app para que ele sempre retorne em camelCase e que respeite o camelCase na request também\n6. Colocar claim nos tokens para poder saber o id do usuário"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer oat_NA.QngyT1NGOTliVEZDU3dNdTBXNTdta2xvY0dmUnV5YlU4VGFwalRzbTE4MjkxMzc4MTE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"teacherId\": 6,\n    \"number\": 134,\n    \"capacity\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/classrooms",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"classrooms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer oat_NA.QngyT1NGOTliVEZDU3dNdTBXNTdta2xvY0dmUnV5YlU4VGFwalRzbTE4MjkxMzc4MTE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"number\": 134,\n    \"capacity\": 3\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/classrooms/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"classrooms",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer oat_Mg.c2JybDNncXNLemY0N21xRkpTeU9sQzdBSTFtNy13NXNzeF92NVFscTI2ODMwNzA3ODY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3333/classrooms/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"classrooms",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disableCookies": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer oat_NA.QngyT1NGOTliVEZDU3dNdTBXNTdta2xvY0dmUnV5YlU4VGFwalRzbTE4MjkxMzc4MTE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Aluno 1\",\n    \"email\": \"aluno+1@clicksoft.com\",\n    \"password\": \"@Mudar123**\",\n    \"registration\": \"123\",\n    \"birthdate\": \"2003-11-06 12:00:00\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/classrooms/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"classrooms",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "classroom student",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "1. Alterar o globalExceptionHandler para conter um padrão de retorno da API e cadastrar os erros lá\n2. Criar os exceptions ao inves de fazer \"throw new Error\"\n3. Verificar os retornos para manter tudo em inglês\n4. Ver uma forma de tipar a request\n5. Configurar o app para que ele sempre retorne em camelCase e que respeite o camelCase na request também\n6. Colocar claim nos tokens para poder saber o id do usuário"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer oat_Mg.c2JybDNncXNLemY0N21xRkpTeU9sQzdBSTFtNy13NXNzeF92NVFscTI2ODMwNzA3ODY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"teacherId\": 6,\n    \"classroomId\": 2,\n    \"studentId\": 8\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/classroom-students",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"classroom-students"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer oat_Mg.c2JybDNncXNLemY0N21xRkpTeU9sQzdBSTFtNy13NXNzeF92NVFscTI2ODMwNzA3ODY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"classroomId\": 2,\n    \"studentId\": 3\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/classroom-students",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"classroom-students"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disableCookies": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer oat_Mg.c2JybDNncXNLemY0N21xRkpTeU9sQzdBSTFtNy13NXNzeF92NVFscTI2ODMwNzA3ODY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/classroom-students/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"classroom-students",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get students by classroom",
+					"protocolProfileBehavior": {
+						"disableCookies": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer oat_Ng.aGgwZUJGdHBaTmxUUXJBcVhrSkR1Zng4NDRVZUZIZFJNT2RxdXlWZTI1OTc2Mzk2MTg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3333/classroom-students/by-classroom?classroomId=2&teacherId=6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"classroom-students",
+								"by-classroom"
+							],
+							"query": [
+								{
+									"key": "classroomId",
+									"value": "2"
+								},
+								{
+									"key": "teacherId",
+									"value": "6"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get classrooms by student",
+					"protocolProfileBehavior": {
+						"disableCookies": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer oat_NQ.eURaM2VsckFPUlJseTU3SGpBLUUxbE5JTDA5cUtVMzVQNkRIa2hhZTEyMzgzNTY4ODU",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3333/classroom-students/by-student?studentId=8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"classroom-students",
+								"by-student"
+							],
+							"query": [
+								{
+									"key": "studentId",
+									"value": "8"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

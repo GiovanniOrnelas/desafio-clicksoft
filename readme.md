@@ -16,6 +16,11 @@ Este projeto foi feito como parte do **desafio backend (Clicksoft)** e implement
 
 ## 📋 Funcionalidades
 
+### 🔑 Autenticação
+- Endpoint para **login** de usuários (JWT).  
+- Apenas usuários autenticados podem acessar os recursos da API.  
+- **Cadastro de alunos e professores não é público**: somente o **administrador (secretaria da escola)** pode criar novos usuários.  
+
 ### 👩‍🎓 Aluno
 - Cadastro de aluno  
 - Edição de dados  
@@ -69,12 +74,27 @@ Este projeto foi feito como parte do **desafio backend (Clicksoft)** e implement
    node ace migration:run
    ```
 
-6. Inicie o servidor:
+6. Rode as migrations:
    ```bash
-   node ace serve --watch
+   node ace migration:run
+   ```
+
+7. Execute o seeder para criar o usuário administrador (secretaria):
+   ```bash
+   node ace db:seed
+   ```
+
+8. Inicie o servidor
+   ```
+   npm run dev
    ```
 
 A API estará disponível em:  
-👉 `http://127.0.0.1:3333`
+👉 `http://localhost:3333`
 
 ---
+
+## 📂 Rotas da API
+
+Todas as rotas estão documentadas em uma collection do Postman.
+Basta importar o arquivo Clicksoft.postman_collection.json que está na raiz do repositório.
