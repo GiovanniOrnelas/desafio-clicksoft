@@ -59,7 +59,7 @@ export default class StudentService {
   async findById(id: number): Promise<GetStudentResponse> {
     const user = await this.userRepository.getStudentByIdAsync(id);
 
-    if (user == undefined) throw new InvalidArgumentsException('this user already exists')
+    if (user == undefined) throw new InvalidArgumentsException('this user not exist')
 
     const response: GetStudentResponse = {
       id: user.id,

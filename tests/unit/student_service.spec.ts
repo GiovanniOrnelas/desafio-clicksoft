@@ -1,69 +1,76 @@
 import { test } from '@japa/runner'
 import { DateTime } from 'luxon'
 
-
 import StudentService from '#services/student_service'
 
 const fakeUser = {
   id: 1,
   name: 'John',
   email: 'john@test.com',
+  student: {
+    registration: '12345678',
+    birthdate: new Date(),
+    updateCalled: false,
+    update(data: any) {
+      this.updateCalled = true
+      this.birthdate = data
+    },
+    useTransaction(trx: any) { return this },
+    save: async () => {},
+  },
+  updateCalled: false,
+  update(name: string, email: string, password: string) {
+    this.updateCalled = true
+    this.name = name
+    this.email = email
+  },
+  useTransaction(trx: any) { return this },
+  save: async () => {},
 }
 
-const fakeStudent = {
-  registration: '12345678',
-  birthdate: new Date(),
-}
-
-test.group('StudentService', (group) => {
+test.group('StudentService - get & update', (group) => {
   let service: StudentService
   let mockUserRepository: any
 
   group.setup(() => {
     mockUserRepository = {
-      getStudentByIdAsync: async () => null,
+      getStudentByIdAsync: async (id: number) => {
+        if (id === fakeUser.id) return fakeUser
+        return null
+      },
       existsOtherUserWithEmailAsync: async () => false,
-      getByEmailAsync: async () => null,
-      verifyCredentialsAsync: async () => true,
-      getTeacherByIdAsync: async () => null,
     }
 
     service = new StudentService(mockUserRepository)
   })
 
-  test('create - should create a student successfully', async ({assert}) => {
-    const User = {
-      findBy: async () => null,
-      create: async () => fakeUser,
-    } as any
+  test('findById - should return a student successfully', async ({ assert }) => {
+    const result = await service.findById(fakeUser.id)
 
-    const Student = {
-      findBy: async () => null,
-      create: async () => fakeStudent,
-    } as any
+    assert.equal(result.id, fakeUser.id)
+    assert.equal(result.name, fakeUser.name)
+    assert.equal(result.email, fakeUser.email)
+    assert.equal(result.registration, fakeUser.student.registration)
+    assert.equal(result.birthdate.toString(), fakeUser.student.birthdate.toString())
+  })
 
-    const db = {
-      transaction: async () => ({
-        commit: async () => {},
-        rollback: async () => {},
-      }),
-    } as any
-
-    const serviceWithMocks = new StudentService(mockUserRepository)
-    ;(serviceWithMocks as any).User = User
-    ;(serviceWithMocks as any).Student = Student
-    ;(serviceWithMocks as any).db = db
-
+  test('update - should update a student successfully', async ({ assert }) => {
     const input = {
-      name: 'John',
-      email: 'john@test.com',
-      password: '123456',
-      registration: '12345678',
+      name: 'John Updated',
+      email: 'john.updated@test.com',
+      password: 'newpassword',
       birthdate: DateTime.fromJSDate(new Date()),
     }
 
-    const result = await serviceWithMocks.create(input)
+    const result = await service.update(fakeUser.id, input)
 
+    assert.isTrue(fakeUser.student.updateCalled)
+    assert.isTrue(fakeUser.updateCalled)
+
+    assert.equal(result.id, fakeUser.id)
     assert.equal(result.name, input.name)
+    assert.equal(result.email, input.email)
+    assert.equal(result.registration, fakeUser.student.registration)
+    assert.equal(result.birthdate.toString(), fakeUser.student.birthdate.toString())
   })
 })
