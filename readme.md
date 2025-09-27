@@ -9,8 +9,8 @@ Este projeto foi feito como parte do **desafio backend (Clicksoft)** e implement
 ## ⚙️ Tecnologias utilizadas
 - [Node.js](https://nodejs.org/)
 - [AdonisJS](https://adonisjs.com)
-- [PostgreSQL]
-- [Insomnia ou Postman](https://insomnia.rest/) (para testar as rotas)
+- [PostgreSQL](https://www.postgresql.org/download/)
+- [Postman](https://www.postman.com/) (para testar as rotas)
 
 ---
 
