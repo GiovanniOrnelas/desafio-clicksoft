@@ -9,8 +9,8 @@ Este projeto foi feito como parte do **desafio backend (Clicksoft)** e implement
 ## ⚙️ Tecnologias utilizadas
 - [Node.js](https://nodejs.org/)
 - [AdonisJS](https://adonisjs.com)
-- [SQLite ou SQL Server] (dependendo da config que você usou)
-- [Insomnia](https://insomnia.rest/) (para testar as rotas)
+- [PostgreSQL]
+- [Insomnia ou Postman](https://insomnia.rest/) (para testar as rotas)
 
 ---
 
@@ -54,7 +54,7 @@ Este projeto foi feito como parte do **desafio backend (Clicksoft)** e implement
 
 2. Acesse a pasta do projeto:
    ```bash
-   cd nome-do-repo
+   cd desafio-clicksoft
    ```
 
 3. Instale as dependências:
