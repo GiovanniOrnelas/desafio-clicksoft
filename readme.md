@@ -74,17 +74,12 @@ Este projeto foi feito como parte do **desafio backend (Clicksoft)** e implement
    node ace migration:run
    ```
 
-6. Rode as migrations:
-   ```bash
-   node ace migration:run
-   ```
-
-7. Execute o seeder para criar o usuário administrador (secretaria):
+6. Execute o seeder para criar o usuário administrador (secretaria):
    ```bash
    node ace db:seed
    ```
 
-8. Inicie o servidor
+7. Inicie o servidor
    ```
    npm run dev
    ```
